@@ -59,7 +59,8 @@
 
     @Override
     public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        getActivity().getMenuInflater().inflate(R.menu.crime_list_item_context, menu);
+        super.onCreateActionMode(actionMode, Menu menu);
+     getActivity().getMenuInflater().inflate(R.menu.crime_list_item_context, menu);
         return true;
     }
 
@@ -89,7 +90,7 @@
 
     @Override
     public boolean onLongClick(View v) {
-        ActionBarActivity activity = (ActionBarActivity)getActivity();
+        AppCompatActivity activity = (AppCompatActivity)getActivity();
         activity.startSupportActionMode(mDeleteMode);
         mMultiSelector.setSelected(this, true);
         return true;
@@ -126,7 +127,7 @@ public void setDefaultModeStateListAnimator(int resId);</code></pre>
     void setActivated(boolean activated);
     boolean isActivated();
 
-    int getPosition();
+    int getAdapterPosition();
     long getItemId();
 }</code></pre>
 <p>It requires a bit more code: you will need to bind your ViewHolder to the MultiSelector by calling MultiSelector.bindHolder() every time your view holder is bound to a different item. On the other hand, though, your implementation doesn't even necessarily have to be hooked up to a RecyclerView, and neither does your MultiSelector. I have no idea how useful that is to anyone, but there you go.</p>
