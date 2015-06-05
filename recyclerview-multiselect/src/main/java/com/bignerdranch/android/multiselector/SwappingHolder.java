@@ -30,7 +30,7 @@ import android.view.View;
  * <p>(Thanks to <a href="https://github.com/kurtisnelson/">Kurt Nelson</a> for examples and discussion on approaches here.)</p>
  */
 public  class SwappingHolder extends MultiSelectorBindingHolder implements SelectableHolder {
-    private MultiSelector mMultiSelector;
+    public final MultiSelector mMultiSelector;
     private boolean mIsSelectable = false;
     private Drawable mSelectionModeBackgroundDrawable;
     private Drawable mDefaultModeBackgroundDrawable;
