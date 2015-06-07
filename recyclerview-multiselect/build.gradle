@@ -4,13 +4,16 @@ version '0.1'
 group 'com.bignerdranch.android'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+//    compileSdkVersion 21
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        rootProject.ext.compileSdkVersion
+        minSdkVersion 14
+        compileSdkVersion 21
+        buildToolsVersion '22.0.1'
+        versionCode 1
+        versionName '1.0'
     }
+
     buildTypes {
         release {
             minifyEnabled false
